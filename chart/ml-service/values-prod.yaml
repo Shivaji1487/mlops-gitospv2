@@ -1,0 +1,8 @@
+replicaCount: 1
+
+autoscaling:
+  enabled: true                       # Active in Production
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 70  # Scales up quickly when CPU exceeds 70%
+  targetMemoryUtilizationPercentage: 80

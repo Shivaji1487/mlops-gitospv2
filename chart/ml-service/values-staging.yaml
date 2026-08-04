@@ -1,0 +1,8 @@
+replicaCount: 2
+
+autoscaling:
+  enabled: true                       # Enabled for load testing
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 80
