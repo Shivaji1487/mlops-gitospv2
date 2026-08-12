@@ -1,7 +1,18 @@
 replicaCount: 1
 
+image:
+  repository: sshivaji555/mlops-app
+  tag: 'latest'
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5000
+  nodePort: 30080
+
 autoscaling:
-  enabled: false                      # Disabled in Dev
+  enabled: false                   # Disabled in Dev
   minReplicas: 1
   maxReplicas: 2
   targetCPUUtilizationPercentage: 80
