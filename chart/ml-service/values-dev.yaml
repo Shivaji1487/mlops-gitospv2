@@ -11,8 +11,22 @@ service:
   targetPort: 5000
   nodePort: 30080
 
+env:
+  - name: MLFLOW_TRACKING_URI
+    value: "http://192.168.235.130:5000"
+  - name: MLFLOW_S3_ENDPOINT_URL
+    value: "http://192.168.235.130:9000"
+  - name: AWS_ACCESS_KEY_ID
+    value: "minioadmin"
+  - name: AWS_SECRET_ACCESS_KEY
+    value: "minioadmin"
+  - name: AWS_DEFAULT_REGION
+    value: "us-east-1"
+
+resources: {}
+
 autoscaling:
-  enabled: false                   # Disabled in Dev
+  enabled: false
   minReplicas: 1
   maxReplicas: 2
   targetCPUUtilizationPercentage: 80
